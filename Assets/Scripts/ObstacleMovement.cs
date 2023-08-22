@@ -13,8 +13,8 @@ public class ObstacleMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float offsetX = (MathF.Sin(Time.time * speed) - 0.5f) * leftRight;
-        float offsetY = (MathF.Sin(Time.time * speed) - 0.5f) * upDown;
+        float offsetX = (MathF.Sin(Time.time * speed)) * leftRight;
+        float offsetY = (MathF.Sin(Time.time * speed)) * upDown;
         obstacle.localPosition = startPosition + new Vector3(offsetX, offsetY, 0);
         
     }
