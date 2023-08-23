@@ -8,6 +8,7 @@ public class SwipeManager : MonoBehaviour
     private bool _tapScreen;
     private bool _touchSupported;
     private Vector2 _delta;
+    private Vector2 _previousClickPosition;
 
     private void Start()
     {
@@ -31,8 +32,6 @@ public class SwipeManager : MonoBehaviour
     {
         while (true)
         {
-            print(_delta);
-            
             Vector2 firstTouchPosition = new Vector2(0, 0);
             if (_tapScreen)
             {
@@ -74,6 +73,7 @@ public class SwipeManager : MonoBehaviour
                 continue;
             }
 
+            _previousClickPosition = secondTouchPosition;
             _delta = firstTouchPosition - secondTouchPosition;
         }
     }
@@ -81,5 +81,10 @@ public class SwipeManager : MonoBehaviour
     public Vector2 GetDelta()
     {
         return _delta;
+    }
+
+    public Vector2 GetPreviousClick()
+    {
+        return _previousClickPosition;
     }
 }
