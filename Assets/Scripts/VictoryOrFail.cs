@@ -14,7 +14,7 @@ public class VictoryOrFail : MonoBehaviour
         string layerName = (LayerMask.LayerToName(other.gameObject.layer));
         if (_allowedLayers.Contains(layerName))
         {
-            if (colorChanger.GetColor() == layerName)
+            if (string.Equals(colorChanger.GetColor(), layerName, StringComparison.CurrentCultureIgnoreCase))
             {
                 print("+1 очко!");
             }
@@ -22,7 +22,16 @@ public class VictoryOrFail : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            
         }
+        else
+        {
+            if (layerName == "endOfLevel")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+        
     }
 
     private void Start()

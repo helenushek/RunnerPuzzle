@@ -16,11 +16,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float direction = -swipeManager.GetDelta().x;
         float clickPosY = swipeManager.GetPreviousClick().y;
-        
-        print(clickPosY);
 
         var multiplier = Screen.height / 1920f;
-        if (clickPosY < (150 * multiplier))
+        if (clickPosY < (400 * multiplier))
             return;
 
         const int minDelta = 10;
