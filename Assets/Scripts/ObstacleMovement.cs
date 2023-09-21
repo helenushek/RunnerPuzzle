@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ObstacleMovement : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class ObstacleMovement : MonoBehaviour
     [SerializeField] private float upDown;
     private Vector3 startPosition;
 
+    private float mixTime;
+
     private void FixedUpdate()
     {
-        float offsetX = (MathF.Sin(Time.time * speed)) * leftRight;
-        float offsetY = (MathF.Sin(Time.time * speed)) * upDown;
+        float offsetX = (MathF.Sin((Time.time + mixTime) * speed)) * leftRight;
+        float offsetY = (MathF.Sin((Time.time + mixTime) * speed)) * upDown;
         obstacle.localPosition = startPosition + new Vector3(offsetX, offsetY, 0);
         
     }
@@ -22,5 +25,6 @@ public class ObstacleMovement : MonoBehaviour
     private void Start()
     {
         startPosition = obstacle.position;
+        mixTime = Random.Range(1f, 10f);
     }
 }
