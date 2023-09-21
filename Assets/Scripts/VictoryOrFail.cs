@@ -16,7 +16,8 @@ public class VictoryOrFail : MonoBehaviour
         {
             if (string.Equals(colorChanger.GetColor(), layerName, StringComparison.CurrentCultureIgnoreCase))
             {
-                print("+1 очко!");
+                print("препятствие пройдено!");
+                Destroy(this);
             }
             else
             {
