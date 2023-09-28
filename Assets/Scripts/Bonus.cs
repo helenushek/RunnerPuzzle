@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
-    private static OrdinaryTsvet _currentColour;
     [SerializeField] private OrdinaryTsvet bonusColor;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_currentColour == OrdinaryTsvet.yellow)
+        var colorChanger = other.GetComponent<ColorChanger>();
+        if (bonusColor.ToString() != colorChanger.GetColor())
         {
-            print("+1 очко!");
+            return;
         }
-
-        other.GetComponent<ColorChanger>().ChangeColor(bonusColor);
-        _currentColour = bonusColor;
         
+        print("+1 очко!");
+
+        
+        colorChanger.ChangeColor(bonusColor);
+
         Destroy(gameObject);
     }
 

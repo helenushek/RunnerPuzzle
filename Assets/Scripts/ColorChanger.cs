@@ -48,6 +48,8 @@ public class ColorChanger : MonoBehaviour
         {
             _color = "none";
         }
+        
+        print(_color);
     }
     
     public string GetColor()
