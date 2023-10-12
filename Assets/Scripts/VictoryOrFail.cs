@@ -12,7 +12,6 @@ public class VictoryOrFail : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string layerName = (LayerMask.LayerToName(other.gameObject.layer));
-        print($"{colorChanger.GetColor()} - {layerName}");
         if (_allowedLayers.Contains(layerName))
         {
             if (string.Equals(colorChanger.GetColor(), layerName, StringComparison.CurrentCultureIgnoreCase))

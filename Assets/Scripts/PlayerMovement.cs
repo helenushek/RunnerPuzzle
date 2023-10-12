@@ -5,32 +5,37 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private SwipeManager swipeManager;
-    [SerializeField] private Transform left;
-    [SerializeField] private Transform right;
     [SerializeField] private Transform player;
-    [SerializeField] private float speed;
-
-    private void Update()
+    
+    private void FixedUpdate()
     {
-        float direction = -swipeManager.GetDelta().x;
-        float clickPosY = swipeManager.GetPreviousClick().y;
-
-        var multiplier = Screen.height / 1920f;
-        if (clickPosY < (400 * multiplier))
-            return;
-
-        const int minDelta = 10;
-        const int negMinDelta = -10;
-
-        if (direction > minDelta)
+        if (Input.GetMouseButton(0))
         {
-            player.position = Vector3.MoveTowards(player.position, right.position, speed);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            MovePlayer(ray);
         }
-
-        if (direction < negMinDelta)
+        if (Input.touchCount !=0)
         {
-            player.position = Vector3.MoveTowards(player.position, left.position, speed);
+            Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+            MovePlayer(ray);
+            
+        }
+    }
+
+    private void MovePlayer(Ray ray)
+    {
+        RaycastHit[] raycastHits = Physics.RaycastAll(ray);
+
+        for (int i = 0; i < raycastHits.Length; i++)
+        {
+            if (raycastHits[i].transform.tag == "Road")
+            {
+                var rayCastHitPosition = raycastHits[i].point;
+                rayCastHitPosition.z = player.position.z;
+                rayCastHitPosition.y = player.position.y;
+                player.position = rayCastHitPosition;
+                break;
+            }
         }
     }
 }

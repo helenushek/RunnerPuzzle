@@ -364,11 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417ea0690b3cc7b4c8bb8e5f07970623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swipeManager: {fileID: 69485318}
-  left: {fileID: 1745207687}
-  right: {fileID: 6820711}
   player: {fileID: 69485312}
-  speed: 0.1
 --- !u!114 &69485320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 6.01, z: -6.0099998}
+  m_LocalPosition: {x: 0, y: 7.39, z: -7.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1745,7 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 69485312}
-  offset: {x: 0, y: 4, z: -4}
+  offset: {x: 0, y: 4, z: -6}
 --- !u!1 &995675579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2109,7 @@ GameObject:
   - component: {fileID: 1147376975}
   m_Layer: 6
   m_Name: RoadObject
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
