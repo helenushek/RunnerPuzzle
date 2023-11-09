@@ -19,6 +19,9 @@ public class OrdinaryColor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ColorChanger colorChanger = other.GetComponent<ColorChanger>();
+        if (colorChanger == null)
+            return;
+        
         if (ordinaryTsvet != OrdinaryTsvet.none)
         {
             colorChanger.ChangeColor(ordinaryTsvet);

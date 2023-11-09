@@ -10,6 +10,9 @@ public class Bonus : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var colorChanger = other.GetComponent<ColorChanger>();
+        if(colorChanger == null)
+            return;
+        
         if (bonusColor.ToString() != colorChanger.GetColor())
         {
             return;

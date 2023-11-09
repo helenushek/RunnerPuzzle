@@ -20,7 +20,7 @@ public class VictoryOrFail : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                LoseManager.Lose();
             }
             
         }
