@@ -14,7 +14,7 @@ public class Turrel : MonoBehaviour
     // timer - время, которое прошло с последнего выпуска пули
     private float timer;
     
-    [SerializeField] private OrdinaryTsvet ordinaryTsvet;
+    
     private void Update()
     {
         // увеличиваем время, с выпуска пули на deltatime
@@ -31,7 +31,6 @@ public class Turrel : MonoBehaviour
         GameObject BulletClone = Instantiate(bullet);
         BulletClone.transform.position = transform.position;
         BulletClone.GetComponent<Rigidbody>().AddForce(direction);
-        BulletClone.GetComponent<Bullet>().Init(ordinaryTsvet);
-
+        BulletClone.GetComponent<NaznachenieTsveta>().tsvet = GetComponent<NaznachenieTsveta>().tsvet;
     }
 }

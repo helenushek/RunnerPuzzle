@@ -13,7 +13,7 @@ public class Bonus : MonoBehaviour
         if(colorChanger == null)
             return;
         
-        if (bonusColor.ToString() != colorChanger.GetColor())
+        if (bonusColor != colorChanger.GetColor())
         {
             return;
         }

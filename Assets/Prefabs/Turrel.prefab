@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3774778122047201783}
   - component: {fileID: 4689313719065045529}
   - component: {fileID: 6026358198834949116}
+  - component: {fileID: 7611384349165316491}
   m_Layer: 0
   m_Name: Turrel
   m_TagString: Untagged
@@ -122,3 +123,16 @@ MonoBehaviour:
   bullet: {fileID: 5915821056054556766, guid: dd552e06c203f1f4592b2c8022987b3b, type: 3}
   direction: {x: 0, y: 0, z: -100}
   ordinaryTsvet: 1
+--- !u!114 &7611384349165316491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106397683192536079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccbccdd734b910469c3dde225b598ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tsvet: 1

@@ -6,19 +6,21 @@ TagManager:
   tags:
   - endOfLevel
   - Road
+  - Meteorit
+  - bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - endOfLevel
+  - 
   - Water
   - UI
   - Floor
   - 
-  - Yellow
-  - Green
-  - Blue
-  - Red
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

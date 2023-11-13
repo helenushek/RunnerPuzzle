@@ -8,38 +8,24 @@ using UnityEngine.SceneManagement;
 public class VictoryOrFail : MonoBehaviour
 {
     [SerializeField] private ColorChanger colorChanger;
-    private List<string> _allowedLayers = new List<string>();
+
     private void OnTriggerEnter(Collider other)
     {
-        string layerName = (LayerMask.LayerToName(other.gameObject.layer));
-        if (_allowedLayers.Contains(layerName))
+        if (other.tag == "endOfLevel" || other.tag == "Meteorit")
+            LoseManager.Lose();
+
+        NaznachenieTsveta naznachenieTsveta = other.GetComponentInChildren<NaznachenieTsveta>();
+        if (naznachenieTsveta == null)
+            return;
+
+        if (naznachenieTsveta.tsvet == colorChanger.GetColor())
         {
-            if (string.Equals(colorChanger.GetColor(), layerName, StringComparison.CurrentCultureIgnoreCase))
-            {
+            if (other.tag != "bullet")
                 print("препятствие пройдено!");
-            }
-            else
-            {
-                LoseManager.Lose();
-            }
-            
         }
         else
         {
-            if (layerName == "endOfLevel")
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+            LoseManager.Lose();
         }
-        
-    }
-
-    private void Start()
-    {
-        _allowedLayers.Add("Green");
-        _allowedLayers.Add("Red");
-        _allowedLayers.Add("Blue");
-        _allowedLayers.Add("Yellow");
-        
     }
 }
