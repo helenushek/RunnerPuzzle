@@ -13,7 +13,9 @@ public class OrdinaryColor : MonoBehaviour
         OrdinaryTsvet.red,
         OrdinaryTsvet.blue,
         OrdinaryTsvet.green,
-        OrdinaryTsvet.yellow
+        OrdinaryTsvet.yellow,
+        OrdinaryTsvet.white,
+        OrdinaryTsvet.black
     };
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +30,7 @@ public class OrdinaryColor : MonoBehaviour
         }
         else
         {
-            OrdinaryTsvet randomTsvet = _spisokTsvetov[Random.Range(0,4)];
+            OrdinaryTsvet randomTsvet = _spisokTsvetov[Random.Range(0,_spisokTsvetov.Count)];
             colorChanger.ChangeColor(randomTsvet);
         }
 
@@ -42,5 +44,7 @@ public enum OrdinaryTsvet
     red,
     blue,
     green,
-    yellow
+    yellow,
+    white,
+    black
 }

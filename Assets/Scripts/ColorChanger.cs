@@ -10,6 +10,8 @@ public class ColorChanger : MonoBehaviour
     [SerializeField] private Color blue;
     [SerializeField] private Color green;
     [SerializeField] private Color yellow;
+    [SerializeField] private Color white;
+    [SerializeField] private Color black;
     [SerializeField] private float immortalTime = 5;
     [SerializeField] private Magnet magnet;
 
@@ -32,8 +34,14 @@ public class ColorChanger : MonoBehaviour
         magnet.MagnetEndTime = 0;
         LoseManager.ShieldYesNo = false;
         LoseManager.ImmortalEndTime = 0;
-        
+
         if (tsvet == OrdinaryTsvet.red)
+        {
+        }
+        else if (tsvet == OrdinaryTsvet.white)
+        {
+        }
+        else if (tsvet == OrdinaryTsvet.black)
         {
         }
         else if (tsvet == OrdinaryTsvet.blue)
@@ -47,15 +55,7 @@ public class ColorChanger : MonoBehaviour
     public void ChangeColor(OrdinaryTsvet tsvet)
     {
         _color = tsvet;
-
-        if (tsvet == OrdinaryTsvet.red)
-            ball.material.color = red;
-        else if (tsvet == OrdinaryTsvet.blue)
-            ball.material.color = blue;
-        else if (tsvet == OrdinaryTsvet.green)
-            ball.material.color = green;
-        else if (tsvet == OrdinaryTsvet.yellow)
-            ball.material.color = yellow;
+        ball.material.color = ConvertColor(tsvet);
     }
 
     public Color ConvertColor(OrdinaryTsvet tsvet)
@@ -78,6 +78,14 @@ public class ColorChanger : MonoBehaviour
         else if (tsvet == OrdinaryTsvet.yellow)
         {
             return yellow;
+        }
+        else if (tsvet == OrdinaryTsvet.white)
+        {
+            return white;
+        }
+        else if (tsvet == OrdinaryTsvet.black)
+        {
+            return black;
         }
 
         throw new Exception("Ошибка");
