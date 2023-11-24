@@ -18,19 +18,27 @@ public class OrdinaryColor : MonoBehaviour
         OrdinaryTsvet.black
     };
 
+    private void Start()
+    {
+        Color color = ColorChanger.Instance.ConvertColor(ordinaryTsvet);
+        var meshRenderer = transform.GetComponent<MeshRenderer>();
+        if (meshRenderer != null)
+            meshRenderer.material.color = color;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         ColorChanger colorChanger = other.GetComponent<ColorChanger>();
         if (colorChanger == null)
             return;
-        
+
         if (ordinaryTsvet != OrdinaryTsvet.none)
         {
             colorChanger.ChangeColor(ordinaryTsvet);
         }
         else
         {
-            OrdinaryTsvet randomTsvet = _spisokTsvetov[Random.Range(0,_spisokTsvetov.Count)];
+            OrdinaryTsvet randomTsvet = _spisokTsvetov[Random.Range(0, _spisokTsvetov.Count)];
             colorChanger.ChangeColor(randomTsvet);
         }
 

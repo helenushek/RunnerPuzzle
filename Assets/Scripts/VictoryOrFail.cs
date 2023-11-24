@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class VictoryOrFail : MonoBehaviour
 {
     [SerializeField] private ColorChanger colorChanger;
+    public bool IsWhite;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +22,12 @@ public class VictoryOrFail : MonoBehaviour
         if (naznachenieTsveta == null)
             return;
 
-        if (naznachenieTsveta.tsvet == colorChanger.GetColor())
+        if (IsWhite)
+        {
+            colorChanger.ChangeColor(naznachenieTsveta.tsvet);
+        }
+
+        else if (naznachenieTsveta.tsvet == colorChanger.GetColor())
         {
             if (other.tag != "bullet")
                 print("препятствие пройдено!");

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ColorChanger : MonoBehaviour
 {
     [SerializeField] private MeshRenderer ball;
+    [SerializeField] private VictoryOrFail victoryOrFail;
 
     [SerializeField] private Color red;
     [SerializeField] private Color blue;
@@ -34,12 +35,15 @@ public class ColorChanger : MonoBehaviour
         magnet.MagnetEndTime = 0;
         LoseManager.ShieldYesNo = false;
         LoseManager.ImmortalEndTime = 0;
+        victoryOrFail.IsWhite = false;
 
         if (tsvet == OrdinaryTsvet.red)
         {
+            //все готово (в Bonus)
         }
         else if (tsvet == OrdinaryTsvet.white)
         {
+            victoryOrFail.IsWhite = true;
         }
         else if (tsvet == OrdinaryTsvet.black)
         {
