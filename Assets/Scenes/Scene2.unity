@@ -258,8 +258,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 537157486}
+  m_Children: []
   m_Father: {fileID: 1267984364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &69485313
@@ -738,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 69485312}
+  m_Father: {fileID: 1267984364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &537157487
 SphereCollider:
@@ -773,7 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1190dbfdfd4b14488f5fca53abe7b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphera: {fileID: 69485312}
   speed: 0.3
+  colorChanger: {fileID: 69485320}
   MagnetEndTime: 0
 --- !u!1001 &538119167
 PrefabInstance:
@@ -1256,6 +1257,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2073345223}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &791213872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791213873}
+  - component: {fileID: 791213874}
+  m_Layer: 0
+  m_Name: Meteorit (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &791213873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791213872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0.83, z: 33.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1473726101}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791213874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791213872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be24650b23774c11a1fa265c3656e196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
+  speed: -4
+  meteorit: {fileID: 8532385686643684479, guid: 9b0e6dd6e86fd914ba14ebf1bc8e6ae5,
+    type: 3}
+  player: {fileID: 69485312}
 --- !u!1001 &880670746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1966,6 +2016,7 @@ Transform:
   - {fileID: 69485312}
   - {fileID: 1745207687}
   - {fileID: 6820711}
+  - {fileID: 537157486}
   m_Father: {fileID: 1473726101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1267984365
@@ -1995,37 +2046,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ordinaryTsvet: 0
---- !u!1 &1346619581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1346619583}
-  m_Layer: 0
-  m_Name: ColorChanger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1346619583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346619581}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 336.78253, y: 203.78192, z: 11.2525425}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1473726101}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1473726100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,10 +2077,10 @@ Transform:
   m_Children:
   - {fileID: 705507995}
   - {fileID: 1555475876}
-  - {fileID: 1346619583}
   - {fileID: 1267984364}
   - {fileID: 107471138}
   - {fileID: 216688899}
+  - {fileID: 791213873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1488601300
