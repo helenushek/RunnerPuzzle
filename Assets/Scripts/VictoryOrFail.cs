@@ -11,6 +11,9 @@ public class VictoryOrFail : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Magnet")
+            return;
+        
         if (other.tag == "endOfLevel" || other.tag == "Meteorit")
             LoseManager.Lose();
 

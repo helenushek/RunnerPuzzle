@@ -18,10 +18,17 @@ public class Bonus : MonoBehaviour
             return;
         }
         
-        print("+1 очко!");
-
         
-        colorChanger.ChangeColor(bonusColor);
+        if (bonusColor == OrdinaryTsvet.red)
+        {
+            CoinManager.SetCoin(CoinManager.GetCoin()+5);
+        }
+        else
+        {
+            CoinManager.SetCoin(CoinManager.GetCoin()+1);
+        }
+        
+        colorChanger.AddBonus(bonusColor);
 
         Destroy(gameObject);
     }
@@ -32,5 +39,13 @@ public class Bonus : MonoBehaviour
         {
             throw new Exception("Цвет не назначен");
         }
+        
+        Color color = ColorChanger.Instance.ConvertColor(bonusColor);
+        transform.GetComponent<MeshRenderer>().material.color=color;
+    }
+
+    public OrdinaryTsvet BonusColor()
+    {
+        return bonusColor;
     }
 }

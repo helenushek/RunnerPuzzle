@@ -7,6 +7,20 @@ public static class LoseManager
 {
     public static void Lose()
     {
+        if (Time.time < ImmortalEndTime)
+        {
+            return;
+        }
+
+        if (ShieldYesNo == true)
+        {
+            ShieldYesNo = false;
+            return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public static float ImmortalEndTime;
+    public static bool ShieldYesNo;
+    
 }
