@@ -10,7 +10,6 @@ public class NaznachenieTsveta : MonoBehaviour
     private void Start()
     {
         Color color = ColorChanger.Instance.ConvertColor(tsvet);
-        transform.GetComponent<MeshRenderer>().material.color=color;
+        transform.GetComponentInChildren<MeshRenderer>().material.color = color;
     }
 }
-

@@ -21,7 +21,7 @@ public class OrdinaryColor : MonoBehaviour
     private void Start()
     {
         Color color = ColorChanger.Instance.ConvertColor(ordinaryTsvet);
-        var meshRenderer = transform.GetComponent<MeshRenderer>();
+        var meshRenderer = transform.GetComponentInChildren<MeshRenderer>();
         if (meshRenderer != null)
             meshRenderer.material.color = color;
     }

@@ -41,7 +41,7 @@ public class Bonus : MonoBehaviour
         }
         
         Color color = ColorChanger.Instance.ConvertColor(bonusColor);
-        transform.GetComponent<MeshRenderer>().material.color=color;
+        transform.GetComponentInChildren<MeshRenderer>().material.color=color;
     }
 
     public OrdinaryTsvet BonusColor()
